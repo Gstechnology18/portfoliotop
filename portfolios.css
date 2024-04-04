@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(68, 5, 126);
+}
+
+h1 {
+ 
+        text-align: center;
+        margin-top: 40px; /* Aumentei um pouco o espaçamento superior */
+        color: #e3d6d6;
+        font-size: 2.5rem; /* Ajustei o tamanho da fonte para torná-lo maior */
+        font-weight: bold; /* Adicionei negrito para maior destaque */
+        text-transform: uppercase; /* Transformei o texto em maiúsculas */
+        letter-spacing: 2px; /* Adicionei um pequeno espaçamento entre as letras */
+
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os cartões */
+    margin-top: 20px;
+}
+
+.portfolio1-card,
+.portfolio2-card {
+    width: calc(25% - 10px); /* Largura dos cartões, calculada para 45% do container com metade do espaço entre eles */
+    padding: 20px;
+    background-color: #ffffff6d; /* Cor de fundo dos cartões */
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Efeito de transição ao passar o mouse */
+    border: 2px solid rgb(163, 0, 222);
+}
+
+.portfolio1-card:hover,
+.portfolio2-card:hover {
+    transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+}
+
+.portfolio1-card h2,
+.portfolio2-card h2 {
+    margin-bottom: 10px;
+}
+
+.portfolio1-card img,
+.portfolio2-card img {
+    width: 100%; /* Imagem ocupa 100% da largura do cartão */
+    border-radius: 5px; /* Borda arredondada para a imagem */
+}
+.back-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-button button {
+    background-color: #e7e7e7;
+    color: #7f06b7;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.back-button button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+/* Estilo para o título principal */
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilo para o subtítulo */
+h5 {
+    font-size: 18px;
+    font-weight: normal;
+    color: #4000ff;
+    margin-bottom: 15px;
+}
+
+/* Estilo para a crítica pessoal */
+h4 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #670707;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o assunto */
+h6 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 5px;
+}
+h2
+{
+    text-align: center;
+}

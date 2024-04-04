@@ -1,0 +1,1004 @@
+:root {
+    --bg-black-900: #e10000;
+    --bg-black-100: #004d9e;
+    --bg-black-50: #e8dfec;
+    --bg-black-500: #450457;
+    --bg-black-600:var(--bg-black-500)
+    --text-black-900: #c19326;
+    --text-black-700: #ffffff;
+    --skin-color: #daa520; /* Adicionado para definir a cor de destaque */
+}
+
+body {
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-black-700);
+    margin: 0; /* Adicionado para garantir que não haja margens extras */
+    background-color: #000000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.section {
+    background: var(--bg-black-900);
+    min-height: 100vh;
+    display: block;
+    position: fixed;
+    left: 270px;
+    padding: 0 30px;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    background-color: #000000;
+}
+
+.section .active {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.padd-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    background: #000000;
+    margin: 0 auto;
+    padding-top: 60px; /* Alterado de left para padding-top para alinhar corretamente */
+    padding-bottom: 70px; /* Alterado de right para padding-bottom para alinhar corretamente */
+}
+
+.section .container {
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+
+.section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    color: var(--text-black-900);
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title h2::before {
+    content: '';
+    height: 4px;
+    width: 50px;
+    background-color: var(--skin-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.section-title h2::after {
+    content: '';
+    height: 4px;
+    width: 25px;
+    background-color: var(--skin-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -15px;
+    position: relative;
+    
+}
+
+/*aside*/
+.aside {
+    width: 270px;
+    background: var(--bg-black-500);
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 30px;
+    height: 100%;
+    border-right: 1px solid var(--bg-black-50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    
+}
+.aside.active {
+    left: -270px;
+}
+
+.aside .logo {
+    position: absolute;
+    top: 80px;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.aside .logo a {
+    color: var(--text-black-900);
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0);
+    padding: 15px 20px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    position: relative;
+}
+
+.aside .logo a span {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 50px;
+}
+
+.aside .logo a::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid var(--skin-color);
+    border-left: 5px solid var(--skin-color);
+    bottom: 0;
+    left: 0;
+}
+
+.aside .logo a::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid var(--skin-color);
+    border-left: 5px solid var(--skin-color);
+    top: 0;
+    right: 0;
+}
+
+/* Estilo atualizado para o botão nav-toggler */
+/* Estilo atualizado para o botão nav-toggler */
+.nav-toggler {
+    height: 40px;
+    width: 45px;
+    cursor: pointer;
+    position: fixed;
+    left: 30px; /* Ajuste conforme necessário */
+    top: 20px; /* Ajuste conforme necessário */
+    border-radius: 5px;
+    background: var(--bg-black-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav-toggler .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ff6347; /* Altere para a cor desejada */
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggler.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggler.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggler.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+.aside .nav {
+    margin-top: 50px;
+}
+
+.aside .nav :hover {
+    color: #daa520;
+    background-color: rgb(14, 79, 136);
+}
+
+.aside .nav li {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    display: block;
+}
+
+.aside .nav li a {
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    padding: 5px 15px;
+}
+
+.aside .nav li a.active {
+    color: var(--skin-color);
+}
+
+.aside .nav li a i {
+    margin-right: 15px;
+}
+
+
+/* home */
+.home {
+    min-height: 100vh;
+    display: flex;
+}
+
+.home .home-info {
+    position: relative;
+    top: 12rem;
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+h3.apresentação {
+    font-size: 30px;
+    margin: 15px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    height: 20px;
+}
+
+h3.apresentação span {
+    font-size: inherit;
+    font-weight: 700;
+    color: var(--bg-black-50);
+}
+
+h3.profissão {
+    font-size: 30px;
+    margin: 15px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.tipo {
+    color: var(--skin-color);
+}
+
+.home-info p {
+    margin-bottom: 70px;
+    font-size: 20px;
+    color: var(--text-black-700);
+}
+
+.home .home-img {
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+    position: relative;
+}
+
+.home .home-img img {
+    height: 400px;
+}
+
+/* About (Mais) */
+.about .about-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.about .about-content .about-text {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.about .about-content .about-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.about .about-content .about-text h3 span {
+    color: var(--skin-color);
+}
+
+
+/* Square flex container */
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Individual image container */
+.square .image {
+    flex: 0 0 33.33%; /* Distributes images equally in three columns */
+    max-width: 33.33%;
+    text-align: center;
+    position: relative; /* Adiciona posição relativa para que o quadrado seja posicionado corretamente */
+}
+
+/* Image styles */
+.square .image img {
+    width: 100%; /* Define a largura das imagens para ocupar todo o espaço do container */
+    margin: 10px; /* Espaçamento entre as imagens */
+}
+
+/* Quadrado branco */
+.square .image::before {
+    content: ''; /* Adiciona conteúdo vazio para o elemento */
+    position: absolute; /* Define a posição absoluta para que o quadrado fique sobre a imagem */
+    top: 0; /* Alinha o quadrado no topo do container */
+    left: 0; /* Alinha o quadrado à esquerda do container */
+    width: 100%; /* Define a largura do quadrado igual à largura do container */
+    height: 100%; /* Define a altura do quadrado igual à altura do container */
+    opacity: 0.5; /* Define a opacidade do quadrado */
+    z-index: 1; /* Define a ordem de empilhamento do quadrado */
+}
+
+/* Define a animação somente para telas de celular */
+@media screen and (max-width: 767px) {
+    .aside {
+        transition: left 0.3s ease;
+    }
+}
+
+h1 {
+    text-align: center;
+    background-color: #450457;
+    border-radius: 20px;
+    color: #daa520;
+}
+
+.portfolio {
+    text-align: center; /* Alinha as imagens ao centro */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+    max-height: calc(100vh - 200px); /* Define a altura máxima para a barra de rolagem */
+    padding-right: 20px; /* Adiciona um espaço para a barra de rolagem não sobrepor o conteúdo */
+}
+
+.portfolio::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+.portfolio::-webkit-scrollbar-thumb {
+    background-color: var(--skin-color); /* Cor do polegar da barra de rolagem */
+    border-radius: 6px; /* Arredonda as bordas do polegar */
+}
+
+.portfolio::-webkit-scrollbar-thumb:hover {
+    background-color: yellow; /* Cor do polegar da barra de rolagem ao passar o mouse */
+}
+
+.portfolio::-webkit-scrollbar-thumb:active {
+    background-color: rgb(50, 184, 205) /* Cor do polegar da barra de rolagem ao clicar */
+}
+
+.portfolio img {
+    width: 30%; /* Define a largura das imagens */
+    margin: 10px; /* Espaçamento entre as imagens */
+    display: inline-block; /* Faz com que as imagens se comportem como blocos e sejam exibidas lado a lado */
+    vertical-align: top; /* Alinha as imagens no topo */
+    border: 2px solid rgb(104, 36, 172); /* Adiciona uma borda  */
+    animation: changeColor 3s infinite alternate; /* Aplica a animação à borda */
+}
+
+@keyframes changeColor {
+    51% {
+        border-color: rgb(200, 0, 255);
+    } /* Inicialmente a borda é branca */
+    50% {
+        border-color: #ffffff;
+    } /* Aos 50% da animação, a borda se torna azul */
+    100% {
+        border-color: rgb(125, 16, 180);
+    } /* No final, a borda volta a ser branca */
+}
+
+h2 {
+    text-align: center;
+    background-color: #450457;
+    border-radius: 20px;
+    color: #daa520;
+}
+/* Estilo para os botões das redes sociais na seção de contato */
+.social-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 100px; /* Tamanho aumentado para 100px */
+    color: #eeff00;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff; /* Cor quando hover */
+}
+:root {
+    --bg-black-900: #e10000;
+    --bg-black-100: #004d9e;
+    --bg-black-50: #e8dfec;
+    --bg-black-500: #450457;
+    --text-black-900: #c19326;
+    --text-black-700: #ffffff;
+    --skin-color: #daa520; /* Adicionado para definir a cor de destaque */
+}
+
+body {
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-black-700);
+    margin: 0; /* Adicionado para garantir que não haja margens extras */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.section {
+    background: var(--bg-black-900);
+    min-height: 100vh;
+    display: block;
+    position: fixed;
+    left: 270px;
+    padding: 0 30px;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    background-color: #000000;
+}
+
+.section .active {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.padd-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    background: #000000;
+    margin: 0 auto;
+    padding-top: 60px; /* Alterado de left para padding-top para alinhar corretamente */
+    padding-bottom: 70px; /* Alterado de right para padding-bottom para alinhar corretamente */
+}
+.section .container {
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+
+.section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    color: var(--text-black-900);
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title h2::before {
+    content: '';
+    height: 4px;
+    width: 50px;
+    background-color: var(--skin-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.section-title h2::after {
+    content: '';
+    height: 4px;
+    width: 25px;
+    background-color: var(--skin-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+}
+.section-title h1{
+    text-align: center;
+    background-color: #000000;
+}
+
+.row {
+    margin: 20px auto;
+    width: 80%; /* Ajuste conforme necessário */
+    max-width: 800px; /* Defina um valor máximo para evitar que o texto se estenda demais em telas grandes */
+    background-color: #000000; /* Cor de fundo para destacar a seção */
+    padding: 20px;
+    border-radius: 8px; /* Adicionando cantos arredondados ao contêiner */
+    
+}
+.about-text h1
+{
+    text-align: center;
+     
+}
+
+
+/*aside*/
+.aside {
+    width: 270px;
+    background: var(--bg-black-500);
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 30px;
+    height: 100%;
+    border-right: 1px solid var(--bg-black-50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    
+}
+.aside.active {
+    left: -270px;
+}
+.aside .logo {
+    position: absolute;
+    top: 80px;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.aside .logo a {
+    color: var(--text-black-900);
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0);
+    padding: 15px 20px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    position: relative;
+}
+
+.aside .logo a span {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 50px;
+}
+
+.aside .logo a::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid var(--skin-color);
+    border-left: 5px solid var(--skin-color);
+    bottom: 0;
+    left: 0;
+}
+
+.aside .logo a::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid var(--skin-color);
+    border-left: 5px solid var(--skin-color);
+    top: 0;
+    right: 0;
+}
+
+.aside .nav-toggler {
+    height: 40px;
+    width: 45px;
+    border: 1px solid var(--bg-black-50);
+    cursor: pointer;
+    position: fixed;
+    left: 300px;
+    top: 20px;
+    border-radius: 5px;
+    background: var(--bg-black-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease, transform 0.3s ease;
+}
+
+.aside .nav-toggler span {
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Mudando a rotação do ícone quando o sidebar está ativo */
+.aside.active .nav-toggler span {
+    transform: rotate(90deg);
+}
+
+.aside .nav {
+    margin-top: 50px;
+}
+
+.aside .nav :hover {
+    color: #daa520;
+    background-color: rgb(75, 38, 104);
+}
+
+.aside .nav li {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    display: block;
+}
+
+.aside .nav li a {
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    padding: 5px 15px;
+}
+
+.aside .nav li a.active {
+    color: var(--skin-color);
+}
+
+.aside .nav li a i {
+    margin-right: 15px;
+}
+
+
+/* home */
+.home {
+    min-height: 100vh;
+    display: flex;
+}
+
+.home .home-info {
+    position: relative;
+    top: 12rem;
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+h3.apresentação {
+    font-size: 30px;
+    margin: 15px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    height: 20px;
+}
+
+h3.apresentação span {
+    font-size: inherit;
+    font-weight: 700;
+    color: var(--bg-black-50);
+}
+
+h3.profissão {
+    font-size: 30px;
+    margin: 15px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.tipo {
+    color: var(--skin-color);
+}
+
+.home-info p {
+    margin-bottom: 70px;
+    font-size: 20px;
+    color: var(--text-black-700);
+    
+}
+
+.home .home-img {
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+    position: relative;
+    border: 2px solid rgb(129, 0, 184);
+    
+}
+
+.home .home-img img {
+    height: 400px;
+}
+
+/* About (Mais) */
+.about .about-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.about .about-content .about-text {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.about .about-content .about-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.about .about-content .about-text h3 span {
+    color: var(--bg-black-500);
+}
+
+.sobre .container .about-content .about-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.sobre .container .about-content .about-text p {
+    font-size: 16px;
+    color: var(--skin-color);
+    text-align: center;
+}
+.about-text img {
+    max-width: 100%; /* Define a largura máxima da imagem como 100% do contêiner pai */
+    height: auto; /* Mantém a proporção original da imagem */
+    display: block; /* Garante que a imagem se comporte como um bloco */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    max-height: 300px; /* Define uma altura máxima para a imagem */
+}
+.about-text::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+.about-text::-webkit-scrollbar-thumb {
+    background-color: var(--skin-color); /* Cor do polegar da barra de rolagem */
+    border-radius: 6px; /* Arredonda as bordas do polegar */
+}
+
+.about-text::-webkit-scrollbar-thumb:hover {
+    background-color: yellow; /* Cor do polegar da barra de rolagem ao passar o mouse */
+}
+
+.about-text::-webkit-scrollbar-thumb:active {
+    background-color: rgb(50, 184, 205) /* Cor do polegar da barra de rolagem ao clicar */
+}
+
+/* Estilo para a faixa de rolagem */
+.about-text::-webkit-scrollbar-track {
+    background-color: #333; /* Cor da faixa de rolagem */
+}
+
+/* Square flex container */
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Individual image container */
+.square .image {
+    flex: 0 0 33.33%; /* Distributes images equally in three columns */
+    max-width: 33.33%;
+    text-align: center;
+    position: relative; /* Adiciona posição relativa para que o quadrado seja posicionado corretamente */
+}
+
+/* Image styles */
+.square .image img {
+    width: 100%; /* Define a largura das imagens para ocupar todo o espaço do container */
+    margin: 10px; /* Espaçamento entre as imagens */
+}
+
+/* Quadrado branco */
+.square .image::before {
+    content: ''; /* Adiciona conteúdo vazio para o elemento */
+    position: absolute; /* Define a posição absoluta para que o quadrado fique sobre a imagem */
+    top: 0; /* Alinha o quadrado no topo do container */
+    left: 0; /* Alinha o quadrado à esquerda do container */
+    width: 100%; /* Define a largura do quadrado igual à largura do container */
+    height: 100%; /* Define a altura do quadrado igual à altura do container */
+    opacity: 0.5; /* Define a opacidade do quadrado */
+    z-index: 1; /* Define a ordem de empilhamento do quadrado */
+}
+
+.portfolio h1{
+    text-align: center;
+    background-color: #450457;
+    border-radius: 20px;
+    color: #daa520;
+}
+.portfolio {
+    
+    text-align: center; /* Alinha as imagens ao centro */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+    max-height: calc(100vh - 200px); /* Define a altura máxima para a barra de rolagem */
+    padding-right: 20px; /* Adiciona um espaço para a barra de rolagem não sobrepor o conteúdo */
+}
+
+.portfolio::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+.portfolio::-webkit-scrollbar-thumb {
+    background-color: var(--skin-color); /* Cor do polegar da barra de rolagem */
+    border-radius: 6px; /* Arredonda as bordas do polegar */
+}
+
+.portfolio::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(182, 107, 207); /* Cor do polegar da barra de rolagem ao passar o mouse */
+}
+
+.portfolio::-webkit-scrollbar-thumb:active {
+    background-color: rgb(162, 98, 192) /* Cor do polegar da barra de rolagem ao clicar */
+}
+
+.portfolio img {
+    width: 30%; /* Define a largura das imagens */
+    margin: 10px; /* Espaçamento entre as imagens */
+    display: inline-block; /* Faz com que as imagens se comportem como blocos e sejam exibidas lado a lado */
+    vertical-align: top; /* Alinha as imagens no topo */
+    border: 2px solid rgb(104, 36, 172); /* Adiciona uma borda  */
+    animation: changeColor 3s infinite alternate; /* Aplica a animação à borda */
+}
+
+@keyframes changeColor {
+    51% {
+        border-color: rgb(200, 0, 255);
+    } /* Inicialmente a borda é branca */
+    50% {
+        border-color: #ffffff;
+    } /* Aos 50% da animação, a borda se torna azul */
+    100% {
+        border-color: rgb(125, 16, 180);
+    } /* No final, a borda volta a ser branca */
+}
+
+/* Estilo para os botões das redes sociais na seção de contato */
+.social-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 100px; /* Tamanho aumentado para 100px */
+    color: #efef19;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #9e00d7; /* Cor quando hover */
+}
+.copyright
+{
+    color: #c19326;
+    position: absolute;
+    bottom: 50px;   
+}
+h4{
+    position: relative;
+    text-align: center;
+    left: 10px;
+    background-color: #c19326;
+}
+
+h3 {
+    font-size: 1.5rem; /* Tamanho da fonte em unidades rem (equivalente a 20px) */
+    font-weight: 700; /* Mais robusto que bold */
+    color: #ffffff; /* Cor branca para o texto */
+    margin-bottom: 1rem; /* Espaçamento inferior de 1 rem (equivalente a 16px) para separar elementos */
+    text-align: center; /* Alinha o texto ao centro */
+    line-height: 1; /* Define o espaçamento entre linhas para ser igual ao tamanho da fonte */
+}
+.sobre {
+    
+    text-align: center; /* Alinha as imagens ao centro */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+    max-height: calc(100vh - 200px); /* Define a altura máxima para a barra de rolagem */
+    padding-right: 20px; /* Adiciona um espaço para a barra de rolagem não sobrepor o conteúdo */
+}
+
+.sobre::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+.sobre::-webkit-scrollbar-thumb {
+    background-color: var(--skin-color); /* Cor do polegar da barra de rolagem */
+    border-radius: 6px; /* Arredonda as bordas do polegar */
+}
+
+.sobre::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(182, 107, 207); /* Cor do polegar da barra de rolagem ao passar o mouse */
+}
+
+.sobre::-webkit-scrollbar-thumb:active {
+    background-color: rgb(162, 98, 192) /* Cor do polegar da barra de rolagem ao clicar */
+}
+.sobre img
+{
+    width: 500px;
+    left: 10px;
+    text-align: center; /* Alinha as imagens ao centro */
+}
+/* Para dispositivos pequenos (por exemplo, telefones) */
+@media screen and (max-width: 767px) {
+    .aside {
+      width: 100%; /* Ajusta a largura para telas pequenas */
+      left: 0; /* Reinicia a posição left */
+      padding: 15px; /* Ajusta o preenchimento para telas menores */
+    }
+  
+    /* Ajusta outros estilos conforme necessário */
+  }
+  
+  /* Para dispositivos médios (por exemplo, tablets) */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Adicione estilos específicos para tablets */
+  }
+  
+  /* Para dispositivos grandes (por exemplo, desktops) */
+  @media screen and (min-width: 1024px) {
+    /* Adicione estilos específicos para desktops */
+  }
+  
+
