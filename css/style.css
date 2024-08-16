@@ -235,10 +235,6 @@ ul {
     margin-top: 50px;
 }
 
-.aside .nav :hover {
-    color: #daa520;
-    background-color: rgb(14, 79, 136);
-}
 
 .aside .nav li {
     margin-bottom: 20px;
@@ -385,14 +381,6 @@ h3.profissão {
     z-index: 1;
     /* Define a ordem de empilhamento do quadrado */
 }
-
-/* Define a animação somente para telas de celular */
-@media screen and (max-width: 767px) {
-    .aside {
-        transition: left 0.3s ease;
-    }
-}
-
 h1 {
     text-align: center;
     background-color: #450457;
@@ -1123,28 +1111,4 @@ h3 {
 
 .imagem-html:last-child, .imagem-css:last-child, .imagem-script:last-child {
     margin-right: 0; /* Remove o espaço à direita da última imagem */
-}
-
-/* Para dispositivos pequenos (por exemplo, telefones) */
-@media screen and (max-width: 767px) {
-    .aside {
-        width: 100%;
-        /* Ajusta a largura para telas pequenas */
-        left: 0;
-        /* Reinicia a posição left */
-        padding: 15px;
-        /* Ajusta o preenchimento para telas menores */
-    }
-
-    /* Ajusta outros estilos conforme necessário */
-}
-
-/* Para dispositivos médios (por exemplo, tablets) */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Adicione estilos específicos para tablets */
-}
-
-/* Para dispositivos grandes (por exemplo, desktops) */
-@media screen and (min-width: 1024px) {
-    /* Adicione estilos específicos para desktops */
 }
